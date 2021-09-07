@@ -1,11 +1,13 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import axios from "axios";
 
-Vue.use(Vuex);
+import Search from "./modules/SearchDispatch";
+
+Vue.use(Vuex, axios);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+  modules: {
+    Search,
+  },
 });

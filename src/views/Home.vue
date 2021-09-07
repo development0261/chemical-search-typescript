@@ -1,18 +1,29 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <div class="container">
+      <div class="row">
+        <InputWord @find-words="findWords"/>
+        <ModalSearch />
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import InputWord from "@/components/InputWord.vue"; // @ is an alias to /src
+import ModalSearch from "@/components/ModalSearch.vue"; // @ is an alias to /src
 
 export default Vue.extend({
   name: "Home",
   components: {
-    HelloWorld,
+    InputWord,
+    ModalSearch,
   },
+  methods: {
+    findWords(words) {
+      console.log(words);
+    }
+  }
 });
 </script>
