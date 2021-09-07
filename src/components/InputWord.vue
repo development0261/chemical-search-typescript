@@ -2,15 +2,13 @@
   <div class="col-md-6">
     <div class="form-group">
       <label>Input option : </label>
-      <!-- <textarea
+      <textarea
         class="form-control"
         v-model="searchText"
         rows="3"
         cols="40"
         @keyup="updateTextFormat"
-      ></textarea> -->
-      <input type="text" class="form-control" />
-      <div v-if="searchText" class="mt-2">Text : {{ searchText }}</div>
+      ></textarea>
       <button
         data-toggle="modal"
         data-target="#myModal"
@@ -34,7 +32,7 @@ export default Vue.extend({
   data() {
     return {
       query: "",
-      searchText: "",      
+      searchText: "",
       apiresponse: [],
       checkedKeywords: [],
       word_array: [],
@@ -54,8 +52,7 @@ export default Vue.extend({
         new_l = new_l.replaceAll('"', "");
         return new_l;
       });
-      //this.ModalsearchText = this.word_array.join(" ");
-      this.$emit('findWords',this.word_array);
+      this.$emit("find-words", this.word_array);
     },
     updateTextFormat: function () {
       this.searchText = this.searchText.replace(regex, "");
@@ -89,5 +86,4 @@ export default Vue.extend({
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped></style>
